@@ -5,6 +5,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   width: 100%;
   height: 100%;
@@ -22,7 +23,12 @@ body {
     display: none !important;
   }
 
-  .testmon .col {
+  .services {
+    background-attachment: scroll;
+  }
+
+  .testmon .col,
+  .services h1 {
     background: white;
     margin: 10px;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.07);
@@ -90,12 +96,12 @@ body {
   max-height: 100%;
 }
 
-.test {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 15px;
-  transform: translate(-50%, -50%);
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .welcome {
@@ -112,7 +118,7 @@ h3 {
   font-weight: bold;
   color: white;
   letter-spacing: 5px;
-  font-size: 2em;
+  font-size: 4em;
   text-align: center;
 }
 
@@ -161,6 +167,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .card-s {
@@ -250,11 +257,6 @@ h3 {
   border-right: solid 3px white;
 }
 
-agm-map {
-  height: 350px;
-  width: 100%;
-}
-
 button {
   outline: none !important;
   border: none;
@@ -278,4 +280,26 @@ button {
 [aria-expanded=true] .menu__icon--close {
   display: block;
   outline: none;
+}
+
+@media only screen and (max-width: 769px) {
+  .col2 h1 {
+    margin-top: 4rem;
+  }
+
+  .services {
+    background-attachment: scroll;
+  }
+
+  .welcome {
+    h1 {
+      font-size: 2em;
+    }
+
+    .overlay {
+      .text-md-center {
+        padding: 0 0.3rem !important;
+      }
+    }
+  }
 }

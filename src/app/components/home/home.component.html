@@ -6,12 +6,63 @@
       <h1>Not your average salon,</h1>
       <h3>We're a one stop shop!</h3>
       <br /><br /><br />
-      <a class="rounded-btn" href="#services">Learn More</a>
+      <a class="rounded-btn" href="#services" id="about">Learn More</a>
       <br /><br />
     </div>
   </div>
 </div>
-<div id="services"></div>
+
+<div class="staff pt-5 pb-5">
+  <div class="container text-center">
+    <h3>Our Talented Staff</h3>
+    <br />
+    <div class="row">
+      <div class="col-sm">
+        <div class="pic1 centerBlock"></div>
+        <h3>Gracie Bayne</h3>
+        <p>About Me</p>
+      </div>
+      <div class="col-sm">
+        <div class="pic2 centerBlock"></div>
+        <h3>Amy Wilson</h3>
+        <p>
+          I am a single mother of three beautiful children, a christian and a
+          licensed cosmetoligist for 22 years, since 1996 in South Carolina.
+        </p>
+
+        <p [hidden]="readMoreAmy">
+          I am a resident of Travelers Rest. I practice in healthy hair and just
+          about anything that pertains to hair and any color techniques from
+          short to long, straight to curly. I am also blessed to be the manager
+          at Gracie B's salon.
+        </p>
+
+        <button (click)="readmoreAmy()">
+          {{ readMoreAmy ? 'Read More' : 'Read Less' }}
+        </button>
+      </div>
+      <div class="col-sm">
+        <div class="pic3 centerBlock"></div>
+        <h3>Kara</h3>
+        <p>
+          My mission is to offer unsurpassed personalized skin care in a
+          friendly, nurturing enviornment where clients can heal and beautify.
+        </p>
+
+        <p [hidden]="readMoreKara">
+          I make use of the latest technologies as well, offering the newest
+          treatments for targeted answers to any of your skin care concerns.
+        </p>
+
+        <button (click)="readmoreKara()" id="services">
+          {{ readMoreKara ? 'Read More' : 'Read Less' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="services text-md-center pt-5 pb-5">
   <h1 class="text-center"><strong>Here's what we offer ...</strong></h1>
   <div class="container">
@@ -21,6 +72,8 @@
         <p><u>Cut</u></p>
         <p>Example text</p>
       </div>
+    </div>
+    <div class="row">
       <div class="col card-s">
         <img src="./comb2.png" class="cir-bg" /><br /><br />
         <p><u>Style</u></p>
@@ -28,7 +81,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col card-s">
+      <div class="col card-s" id="peels">
         <img src="./lotion.png" class="cir-bg" /><br /><br />
         <p><u>Peels</u></p>
         <p>*Each peel is $75 and a bundle of 4 for $250</p>
@@ -69,11 +122,13 @@
             </li>
           </div>
 
-          <button (click)="viewAllPeels = !viewAllPeels">
+          <button (click)="viewallPeels()">
             {{ viewAllPeels ? 'View More' : 'View Less' }}
           </button>
         </ul>
       </div>
+    </div>
+    <div class="row">
       <div class="col card-s">
         <img src="./facialEdit.png" class="cir-bg" /><br /><br />
         <p><u>Facials</u></p>
@@ -180,7 +235,7 @@
               </p>
             </li>
           </div>
-          <button (click)="viewAllFacials = !viewAllFacials">
+          <button (click)="viewallFacials()">
             {{ viewAllFacials ? 'View More' : 'View Less' }}
           </button>
         </ul>
@@ -193,7 +248,8 @@
         <p><u>Waxing</u></p>
         <p>Example text</p>
       </div>
-
+    </div>
+    <div class="row">
       <div class="col card-s">
         <img src="./cosmetics.png" class="cir-bg" /><br /><br />
         <p><u>Other Services</u></p>
@@ -213,11 +269,11 @@
         </div>
         <div class="col">
           <h4>
-            5<br />
+            3<br />
             Talented Specialists
           </h4>
         </div>
-        <div class="col">
+        <div class="col" id="gallery">
           <h4>
             1<br />
             Convenient Location
@@ -228,55 +284,7 @@
   </div>
 </div>
 
-<div class="staff pt-5 pb-5" id="about">
-  <div class="container text-center">
-    <h3>Our Talented Staff</h3>
-    <br />
-    <div class="row">
-      <div class="col">
-        <div class="pic1 centerBlock"></div>
-        <h3>Gracie Bayne</h3>
-        <p>About Me</p>
-      </div>
-      <div class="col">
-        <div class="pic2 centerBlock"></div>
-        <h3>Amy Wilson</h3>
-        <p>
-          I am a single mother of three beautiful children, a christian and a
-          licensed cosmetoligist for 22 years, since 1996 in South Carolina.
-        </p>
 
-        <p [hidden]="readMoreAmy">
-          I am a resident of Travelers Rest. I practice in healthy hair and just
-          about anything that pertains to hair and any color techniques from
-          short to long, straight to curly. I am also blessed to be the manager
-          at Gracie B's salon.
-        </p>
-
-        <button (click)="readMoreAmy = !readMoreAmy">
-          {{ readMoreAmy ? 'Read More' : 'Read Less' }}
-        </button>
-      </div>
-      <div class="col">
-        <div class="pic3 centerBlock"></div>
-        <h3>Kara</h3>
-        <p>
-          My mission is to offer unsurpassed personalized skin care in a
-          friendly, nurturing enviornment where clients can heal and beautify.
-        </p>
-
-        <p [hidden]="readMoreKara">
-          I make use of the latest technologies as well, offering the newest
-          treatments for targeted answers to any of your skin care concerns.
-        </p>
-
-        <button (click)="readMoreKara = !readMoreKara">
-          {{ readMoreKara ? 'Read More' : 'Read Less' }}
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="mobtime pt-5 pb-5">
   <div class="container">
@@ -301,21 +309,125 @@
   <br />
 </div>
 
-<agm-map
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [mapTypeControl]="true"
-  [fullscreenControl]="true"
->
-  <agm-marker
-    [latitude]="markers.lat"
-    [longitude]="markers.lng"
-    [label]="markers.label"
-    [markerDraggable]="markers.draggable"
-    [iconUrl]="goldStar"
-  ></agm-marker>
-</agm-map>
+<div class="wrapper">
+  <h1 class="title">Gallery</h1>
+  <div class="masonry">
+    <div class="brick">
+      <img src="./IMG_1006.jpg" alt="Cherry plant">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1007.jpg" alt="Oranges and Pomegranates">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1008.jpg" alt="Strawberry">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1009.jpg" alt="Blueberries">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1010.jpg" alt="Pears">
+    </div>
+    <div class="brick">
+      <img src="./hair1.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1011.jpg" alt="Easter-eggs">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1012.jpg" alt="Lemons">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1013.jpg" alt="Cherries">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1014.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./hair2.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1015.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1016.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1018.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1021.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./amy.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1023.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1024.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1038.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./kara.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1051.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1052.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1064.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./hair4.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1067.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1073.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1084.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./hair3.jpg" alt="Grapes">
+    </div>
+    <div class="brick">
+      <img src="./IMG_1022.jpg" alt="Grapes">
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="row">
+    <div class="col1">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeControl]="true" [fullscreenControl]="true"
+        [scrollwheel]="false">
+        <agm-marker [latitude]="markers.lat" [longitude]="markers.lng" [label]="markers.label"
+          [markerDraggable]="markers.draggable" [iconUrl]="goldStar"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="col2 flex" id="glitter">
+      <h1 class="text-center">Contact Us:</h1>
+      <br>
+      <h2 class="text-left"><strong>Phone Number:</strong></h2>
+      <h4 class="mt-2"><a href="tel:+18642410450">(864) 241-0450</a></h4>
+      <hr>
+      <h2 class="text-left"><strong>Email:</strong></h2>
+      <h4 class="mt-2"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send
+          Mail</a></h4>
+      <hr>
+      <h2 class="text-left"><strong>Facebook:</strong></h2>
+      <h4 class="mt-2"><a href="https://www.facebook.com/Gracie-Bs-Salon-733150640227595/" target="_blank"><i
+            class="fab fa-facebook-f fa-2x"></i></a></h4>
+    </div>
+  </div>
+</section>
+
 
 <div class="footer pt-2 pb-2">
   <div class="container">

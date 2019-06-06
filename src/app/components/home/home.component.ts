@@ -3,13 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   lat = 34.897831;
   lng = -82.413358;
 
   zoom = 17;
+
+  images = [
+    '../../../assets/Gallery/IMG_1006.jpg',
+    '../../../assets/Gallery/IMG_1006.jpg',
+    '../../../assets/Gallery/IMG_1006.jpg'
+  ];
 
   readMoreAmy = true;
   readMoreKara = true;
@@ -37,6 +43,26 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  readmoreAmy() {
+    this.readMoreAmy = !this.readMoreAmy;
+    this.readMoreKara = true;
+  }
+
+  readmoreKara() {
+    this.readMoreKara = !this.readMoreKara;
+    this.readMoreAmy = true;
+  }
+
+  viewallFacials() {
+    this.viewAllFacials = !this.viewAllFacials;
+    this.viewAllPeels = true;
+  }
+
+  viewallPeels() {
+    this.viewAllPeels = !this.viewAllPeels;
+    this.viewAllFacials = true;
+  }
 }
 
 interface Marker {
