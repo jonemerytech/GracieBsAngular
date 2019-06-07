@@ -11,16 +11,11 @@ export class HomeComponent implements OnInit {
 
   zoom = 17;
 
-  images = [
-    '../../../assets/Gallery/IMG_1006.jpg',
-    '../../../assets/Gallery/IMG_1006.jpg',
-    '../../../assets/Gallery/IMG_1006.jpg'
-  ];
-
   readMoreAmy = true;
   readMoreKara = true;
   viewAllFacials = true;
   viewAllPeels = true;
+  viewAllWax = true;
 
   goldStar = {
     path:
@@ -35,7 +30,7 @@ export class HomeComponent implements OnInit {
   markers: Marker = {
     lat: this.lat,
     lng: this.lng,
-    label: "Gracie B's",
+    label: 'Gracie B\'s',
     icon: this.goldStar,
     draggable: false
   };
@@ -57,11 +52,19 @@ export class HomeComponent implements OnInit {
   viewallFacials() {
     this.viewAllFacials = !this.viewAllFacials;
     this.viewAllPeels = true;
+    this.viewAllWax = true;
   }
 
   viewallPeels() {
     this.viewAllPeels = !this.viewAllPeels;
     this.viewAllFacials = true;
+    this.viewAllWax = true;
+  }
+
+  viewallWax() {
+    this.viewAllWax = !this.viewAllWax;
+    this.viewAllFacials = true;
+    this.viewAllPeels = true;
   }
 }
 

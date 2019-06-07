@@ -28,7 +28,7 @@ body {
   }
 
   .testmon .col,
-  .services h1 {
+  .services h2 {
     background: white;
     margin: 10px;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.07);
@@ -42,10 +42,12 @@ body {
 .mobtime {
   display: none;
   font-size: 14px;
-  background-image: url(./assets/248613-P3U1ZD-912.jpg);
+  background-color: #ffcc66;
   background-repeat: none;
   background-size: cover;
   background-position: center;
+  margin: 0 1.5rem;
+  margin-top: 4rem;
 }
 
 
@@ -105,9 +107,9 @@ body {
 }
 
 .welcome {
-  background-image: url(./assets/O946N20.jpg);
+  background-image: url(./assets/248613-P3U1ZD-912.jpeg);
   background-size: cover;
-  background-position: center;
+  background-position: 0px -850px;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
@@ -163,7 +165,7 @@ h3 {
 
 
 .services {
-  background-image: url(./assets/leav.jpg);
+  background-image: url(./assets//leav.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -211,7 +213,7 @@ h3 {
 }
 
 .pic2 {
-  background-image: url(./assets/amy.jpg);
+  background-image: url(./assets/amy.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,7 +224,7 @@ h3 {
 }
 
 .pic3 {
-  background-image: url(./assets/kara.jpg);
+  background-image: url(./assets/kara.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -246,11 +248,14 @@ h3 {
   width: 150px;
 }
 
-.staff h3 {
+.staff h2,
+.services h2,
+.wrapper h2 {
   color: black;
-  font-size: 20px;
+  font-size: 30px;
   padding: 20px;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .border-it {
@@ -282,7 +287,18 @@ button {
   outline: none;
 }
 
+
+@media (max-width: 1694px) {
+  .welcome {
+    background-position: center;
+  }
+}
+
 @media only screen and (max-width: 769px) {
+  .welcome {
+    background-position: 0px -850px;
+  }
+
   .col2 h1 {
     margin-top: 4rem;
   }
@@ -292,6 +308,8 @@ button {
   }
 
   .welcome {
+    background-position: center;
+
     h1 {
       font-size: 2em;
     }

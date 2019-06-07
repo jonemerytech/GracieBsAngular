@@ -10,6 +10,10 @@ hr {
   border-color: #6D2E52;
 }
 
+ul li {
+  margin-top: .5rem;
+}
+
 .flex {
   display: flex;
   flex-direction: column;
@@ -99,7 +103,6 @@ agm-map {
 
 /* Masonry grid */
 .masonry {
-  transition: all .5s ease-in-out;
   column-gap: 30px;
   column-fill: initial;
 }
@@ -114,11 +117,11 @@ agm-map {
 }
 
 /* Masonry image effects */
-.masonry .brick img {
-  transition: all .5s ease-in-out;
-  backface-visibility: hidden;
-  /* Remove Image flickering on hover */
-}
+// .masonry .brick img {
+//   transition: all .2s ease-in-out;
+//   backface-visibility: hidden;
+//   /* Remove Image flickering on hover */
+// }
 
 .masonry .brick:hover img {
   opacity: .75;

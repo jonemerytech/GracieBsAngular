@@ -14,7 +14,7 @@
 
 <div class="staff pt-5 pb-5">
   <div class="container text-center">
-    <h3>Our Talented Staff</h3>
+    <h2>Our Talented Staff</h2>
     <br />
     <div class="row">
       <div class="col-sm">
@@ -64,25 +64,25 @@
 
 
 <div class="services text-md-center pt-5 pb-5">
-  <h1 class="text-center"><strong>Here's what we offer ...</strong></h1>
+  <h2 class="text-center">Here's what we offer ...</h2>
   <div class="container">
     <div class="row">
       <div class="col card-s">
-        <img src="./wig.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/wig.png" class="cir-bg" /><br /><br />
         <p><u>Cut</u></p>
         <p>Example text</p>
       </div>
     </div>
     <div class="row">
       <div class="col card-s">
-        <img src="./comb2.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/comb2.png" class="cir-bg" /><br /><br />
         <p><u>Style</u></p>
         <p>Example text</p>
       </div>
     </div>
     <div class="row">
       <div class="col card-s" id="peels">
-        <img src="./lotion.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/lotion.png" class="cir-bg" /><br /><br />
         <p><u>Peels</u></p>
         <p>*Each peel is $75 and a bundle of 4 for $250</p>
         <ul class="list-group">
@@ -120,6 +120,30 @@
                 helping you maintain youthfulness of skin.
               </p>
             </li>
+
+            <li class="list-group-item text-left">
+              <strong>Signature Face Lift</strong>
+
+              <hr />
+
+              <p class="text-center">
+                Combination of vitamin C, hydroxy acids, and enzymes to speed up cellular renewal. Supports redness
+                prone skin and botanical detoxifying and energizing complexes giving noticeable results in one session.
+              </p>
+            </li>
+
+            <li class="list-group-item text-left">
+              <strong>Special O2 Lift A breath of fresh skin - $85</strong>
+
+              <hr />
+
+              <p class="text-center">
+                Treatment designed to exfoliate and oxygenate. Removes all surface impurities while balancing and
+                optimizing skins pH. Helping with aging, irritation, and pigmentation. Leaving your skin rejuvenated and
+                illuminated.
+              </p>
+            </li>
+
           </div>
 
           <button (click)="viewallPeels()">
@@ -130,7 +154,7 @@
     </div>
     <div class="row">
       <div class="col card-s">
-        <img src="./facialEdit.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/facialEdit.png" class="cir-bg" /><br /><br />
         <p><u>Facials</u></p>
         <ul class="list-group">
           <li class="list-group-item text-left">
@@ -244,16 +268,75 @@
 
     <div class="row">
       <div class="col card-s">
-        <img src="./wax.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/wax.png" class="cir-bg" /><br /><br />
         <p><u>Waxing</u></p>
-        <p>Example text</p>
+        <ul class="list-group">
+          <li class="list-group-item text-left">
+            <strong>Eyebrows - $10</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Lip - $10</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Chin - $10</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Sideburns - $10</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Full Face - $30</strong>
+          </li>
+
+          <div [hidden]="viewAllWax">
+            <li class="list-group-item text-left">
+              <strong>Underarms - $20</strong>
+            </li>
+
+            <li class="list-group-item text-left">
+              <strong>Half arm - $15</strong>
+            </li>
+
+            <li class="list-group-item text-left">
+              <strong>Full arm - $30</strong>
+            </li>
+
+            <li class="list-group-item text-left">
+              <strong>Half leg - $25</strong>
+            </li>
+
+            <li class="list-group-item text-left">
+              <strong>Full leg - $55</strong>
+            </li>
+          </div>
+
+          <button (click)="viewallWax()">
+            {{ viewAllWax ? 'View More' : 'View Less' }}
+          </button>
+
+        </ul>
       </div>
     </div>
     <div class="row">
       <div class="col card-s">
-        <img src="./cosmetics.png" class="cir-bg" /><br /><br />
+        <img src="../../../assets/cosmetics.png" class="cir-bg" /><br /><br />
         <p><u>Other Services</u></p>
-        <p>Example text</p>
+        <ul class="list-group">
+          <li class="list-group-item text-left">
+            <strong>Lash tint - $15</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Eyebrow Tint - $20</strong>
+          </li>
+
+          <li class="list-group-item text-left">
+            <strong>Eyelash lift and tint - $60</strong>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -289,115 +372,116 @@
 <div class="mobtime pt-5 pb-5">
   <div class="container">
     <h4 class="text-center">Our Hours</h4>
+    <h6 class="text-center text-white"><strong>*Hours may vary by appointment</strong></h6>
     <div class="row">
       <div class="col card-s">
-        Open Hours<br />Monday - Friday<br />
-        8am-5pm
+        Open Hours<br />Tuesday - Saturday<br />
+        9am-6pm
       </div>
       <div class="col card-s">
         Call Us!<br /><br />
-        555-555-5555
+        <a href="tel:+18642410450">(864) 241-0450</a>
       </div>
     </div>
     <div class="row">
       <div class="col card-s">
         Click For Directions<br /><br />
-        (CL)
+        <a href="https://goo.gl/maps/as7LZejtpoXjAVRr9" target="_blank">Click Me</a>
       </div>
     </div>
   </div>
   <br />
 </div>
 
-<div class="wrapper">
-  <h1 class="title">Gallery</h1>
+<div class="wrapper pt-5 pb-5">
+  <h2 class="pb-5">Gallery</h2>
   <div class="masonry">
     <div class="brick">
-      <img src="./IMG_1006.jpg" alt="Cherry plant">
+      <img src="../../../assets/Gallery/IMG_1006.jpg" alt="Cherry plant">
     </div>
     <div class="brick">
-      <img src="./IMG_1007.jpg" alt="Oranges and Pomegranates">
+      <img src="../../../assets/Gallery/IMG_1007.jpg" alt="Oranges and Pomegranates">
     </div>
     <div class="brick">
-      <img src="./IMG_1008.jpg" alt="Strawberry">
+      <img src="../../../assets/Gallery/IMG_1008.jpg" alt="Strawberry">
     </div>
     <div class="brick">
-      <img src="./IMG_1009.jpg" alt="Blueberries">
+      <img src="../../../assets/Gallery/IMG_1009.jpg" alt="Blueberries">
     </div>
     <div class="brick">
-      <img src="./IMG_1010.jpg" alt="Pears">
+      <img src="../../../assets/Gallery/IMG_1010.jpg" alt="Pears">
     </div>
     <div class="brick">
-      <img src="./hair1.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/hair1.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1011.jpg" alt="Easter-eggs">
+      <img src="../../../assets/Gallery/IMG_1011.jpg" alt="Easter-eggs">
     </div>
     <div class="brick">
-      <img src="./IMG_1012.jpg" alt="Lemons">
+      <img src="../../../assets/Gallery/IMG_1012.jpg" alt="Lemons">
     </div>
     <div class="brick">
-      <img src="./IMG_1013.jpg" alt="Cherries">
+      <img src="../../../assets/Gallery/IMG_1013.jpg" alt="Cherries">
     </div>
     <div class="brick">
-      <img src="./IMG_1014.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1014.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./hair2.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/hair2.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1015.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1015.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1016.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1016.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1018.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1018.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1021.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1021.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./amy.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/amy.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1023.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1023.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1024.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1024.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1038.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1038.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./kara.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/kara.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1051.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1051.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1052.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1052.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1064.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1064.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./hair4.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/hair4.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1067.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1067.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1073.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1073.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1084.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1084.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./hair3.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/hair3.jpg" alt="Grapes">
     </div>
     <div class="brick">
-      <img src="./IMG_1022.jpg" alt="Grapes">
+      <img src="../../../assets/Gallery/IMG_1022.jpg" alt="Grapes">
     </div>
   </div>
 </div>
