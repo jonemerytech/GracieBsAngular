@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDUfM1acnylfjYkrCBfIyTS0fEStUC4zLY'
+      apiKey: 'AIzaSyBLrnhohuXptJMM6SjfK9_6N3srVuOhZ08'
     }),
     MHGalleryModule
   ],

@@ -2,7 +2,46 @@
 
 <div class="welcome" id="home">
   <div class="overlay">
+    <nav class="navbar navbar-expand-lg nav-padding" id="home"
+      [ngClass]="{ changeNav : scrolled >= 729, changeColor : show == true, mobileNav : scrolled >= 1 }">
+      <a class="nav-padding" href="#" [className]="scrolled >= 729 ? 'addLogo' : 'navbar-brand'">
+        <img src="./logoWhite.png" style="max-height: 50px;" class="d-inline-block align-top post" alt="Gracie B's" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="showMe()">
+        <span class="menu__icon menu__icon--open">
+          <span>
+            <i class="fas fa-bars"></i>
+          </span>
+        </span>
+        <span class="menu__icon menu__icon--close">
+          <span>
+            <i class="fas fa-times"></i>
+          </span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end nav-padding" id="navbarNav">
+        <ul class="navbar-nav post">
+          <li class="nav-item">
+            <a class="nav-link" href="#top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="text-md-center test">
+      <img src="./logo.png" alt="Gracie B's" />
       <h1>Not your average salon,</h1>
       <h3>We're a one stop shop!</h3>
       <br /><br /><br />
@@ -19,22 +58,38 @@
     <div class="row">
       <div class="col-sm">
         <div class="pic1 centerBlock"></div>
-        <h3>Gracie Bayne</h3>
-        <p>About Me</p>
+        <h3>Coming Soon: Gracie Bayne</h3>
+        <p>
+          Gracie's love for makeup and skin care is what motivated her to attend
+          Kenneth Shuler.
+        </p>
+
+        <p [hidden]="readMoreGracie">
+          Gracie attended Travelers Rest High School and enjoyed being in the
+          school pageants and this is when she fell in love with makeup. Gracie
+          also realized in order for your makeup to look great, you need to have
+          a wonderful skincare routine. Gracie is excited to teach others the
+          tricks of the trade and latest techniques she learned at school. We
+          are looking forward to having Gracie at Gracie B's in the near future.
+        </p>
+
+        <button (click)="readmoreGracie()">
+          {{ readMoreGracie ? 'Read More' : 'Read Less' }}
+        </button>
       </div>
       <div class="col-sm">
         <div class="pic2 centerBlock"></div>
         <h3>Amy Wilson</h3>
         <p>
-          I am a single mother of three beautiful children, a christian and a
-          licensed cosmetoligist for 22 years, since 1996 in South Carolina.
+          I am a single mother of three beautiful children, a Christian and a
+          licensed cosmetoligist for 22
         </p>
 
         <p [hidden]="readMoreAmy">
-          I am a resident of Travelers Rest. I practice in healthy hair and just
-          about anything that pertains to hair and any color techniques from
-          short to long, straight to curly. I am also blessed to be the manager
-          at Gracie B's salon.
+          years, since 1996 in South Carolina. I am a resident of Travelers
+          Rest. I practice in healthy hair and just about anything that pertains
+          to hair and any color techniques from short to long, straight to
+          curly. I am also blessed to be the manager at Gracie B's salon.
         </p>
 
         <button (click)="readmoreAmy()">
@@ -46,16 +101,58 @@
         <h3>Kara</h3>
         <p>
           My mission is to offer unsurpassed personalized skin care in a
-          friendly, nurturing enviornment where clients can heal and beautify.
+          friendly, nurturing enviornment
         </p>
 
         <p [hidden]="readMoreKara">
-          I make use of the latest technologies as well, offering the newest
-          treatments for targeted answers to any of your skin care concerns.
+          where
+          clients can heal and beautify. I make use of the latest technologies
+          as well, offering the newest treatments for targeted answers to any of
+          your skin care concerns. Please fill free to reach me at <a href="tel:+1843601437">(864) 360-1437</a>
         </p>
 
         <button (click)="readmoreKara()" id="services">
           {{ readMoreKara ? 'Read More' : 'Read Less' }}
+        </button>
+      </div>
+
+      <div class="col-sm">
+        <div class="pic4 centerBlock"></div>
+        <h3>Haley</h3>
+        <p>
+          I graduated from Travelers Rest High School and from Enoree Career
+          Center cosmetology
+        </p>
+
+        <p [hidden]="readMoreHaley">
+          program. My love for the beauty industry started at a young age and
+          it's now my career and passion! I make use of the latest technologies
+          as well, offering the newest treatments for targeted answers to any of
+          your skin care concerns.
+        </p>
+
+        <button (click)="readmoreHaley()" id="services">
+          {{ readMoreHaley ? 'Read More' : 'Read Less' }}
+        </button>
+      </div>
+
+      <div class="col-sm">
+        <div class="pic5 centerBlock"></div>
+        <h3>McKenzie</h3>
+        <p>
+          I'm McKenzie, 23 years old. Born and raised in Easley, SC. I enjoy spending time with my family, friends,
+        </p>
+
+        <p [hidden]="readMoreMcKenzie">
+
+          taking trips to the mountains and of course...shopping!!
+          I have been doing hair for about 2 years now and I have loved every minute of it! I am so excited to be apart
+          of Gracie B's salon and continue to build my clientele here! Please fill free to reach me at <a
+            href="tel:+1846076588">(864) 607-6588</a>
+        </p>
+
+        <button (click)="readmoreMcKenzie()" id="services">
+          {{ readMoreMcKenzie ? 'Read More' : 'Read Less' }}
         </button>
       </div>
     </div>
@@ -365,7 +462,7 @@
         </div>
         <div class="col">
           <h4>
-            3<br />
+            5<br />
             Talented Specialists
           </h4>
         </div>
@@ -399,9 +496,7 @@
     <div class="row">
       <div class="col card-s">
         Click For Directions<br /><br />
-        <a href="https://goo.gl/maps/as7LZejtpoXjAVRr9" target="_blank"
-          >Click Me</a
-        >
+        <a href="https://goo.gl/maps/as7LZejtpoXjAVRr9" target="_blank">Click Me</a>
       </div>
     </div>
   </div>
@@ -412,91 +507,100 @@
   <h2 class="pb-5">Gallery</h2>
   <div class="masonry">
     <div class="brick">
-      <img src="./IMG_1006.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1006.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1007.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1007.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1008.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_0209.PNG" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1009.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1008.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1010.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1009.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./hair1.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1010.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1011.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/hair1.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1012.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1011.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1013.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1012.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1014.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1013.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./hair2.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1014.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1015.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/hair2.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1016.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1015.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1018.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1016.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1021.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1018.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./amy.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1021.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1023.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/amy.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1024.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1023.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1038.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1024.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./kara.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1038.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1051.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/kara.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1052.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1051.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1064.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1052.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./hair4.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1064.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1067.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/hair4.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1073.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1067.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1084.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/mckenzie.png" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./hair3.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/IMG_1073.jpeg" alt="GracieBImages" />
     </div>
     <div class="brick">
-      <img src="./IMG_1022.jpg" alt="GracieBImages" />
+      <img src="./assets/Gallery/haley.png" alt="GracieBImages" />
+    </div>
+    <div class="brick">
+      <img src="./assets/Gallery/IMG_1084.jpeg" alt="GracieBImages" />
+    </div>
+    <div class="brick">
+      <img src="./assets/Gallery/hair3.jpeg" alt="GracieBImages" />
+    </div>
+    <div class="brick">
+      <img src="./assets/Gallery/IMG_1022.jpeg" alt="GracieBImages" />
     </div>
   </div>
 </div>
@@ -504,21 +608,10 @@
 <section id="contact">
   <div class="row">
     <div class="col1">
-      <agm-map
-        [latitude]="lat"
-        [longitude]="lng"
-        [zoom]="zoom"
-        [mapTypeControl]="true"
-        [fullscreenControl]="true"
-        [scrollwheel]="false"
-      >
-        <agm-marker
-          [latitude]="markers.lat"
-          [longitude]="markers.lng"
-          [label]="markers.label"
-          [markerDraggable]="markers.draggable"
-          [iconUrl]="goldStar"
-        ></agm-marker>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeControl]="true" [fullscreenControl]="true"
+        [scrollwheel]="false">
+        <agm-marker [latitude]="markers.lat" [longitude]="markers.lng" [label]="markers.label"
+          [markerDraggable]="markers.draggable" [iconUrl]="goldStar"></agm-marker>
       </agm-map>
     </div>
     <div class="col2 flex" id="glitter">
@@ -529,18 +622,13 @@
       <hr />
       <h2 class="text-left"><strong>Email:</strong></h2>
       <h4 class="mt-2">
-        <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"
-          >Send Mail</a
-        >
+        <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
       </h4>
       <hr />
       <h2 class="text-left"><strong>Facebook:</strong></h2>
       <h4 class="mt-2">
-        <a
-          href="https://www.facebook.com/Gracie-Bs-Salon-733150640227595/"
-          target="_blank"
-          ><i class="fab fa-facebook-f fa-2x"></i
-        ></a>
+        <a href="https://www.facebook.com/Gracie-Bs-Salon-733150640227595/" target="_blank"><i
+            class="fab fa-facebook-f fa-2x"></i></a>
       </h4>
     </div>
   </div>
