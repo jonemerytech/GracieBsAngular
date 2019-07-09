@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   doSomething(event) {
-
     this.scrolled = window.pageYOffset;
 
     if (this.scrolled > 0) {
@@ -53,8 +52,7 @@ export class HomeComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   readmoreAmy() {
     this.readMoreAmy = !this.readMoreAmy;
